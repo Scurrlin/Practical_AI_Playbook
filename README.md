@@ -95,13 +95,49 @@ If your AI tool supports slash skills, it can treat these as commands. If it doe
 
 Not every project needs every file. The use-as-is standards always come along (they cost nothing to keep), so the only real question is which templates you fill in. Use the profile closest to your project, then adjust.
 
-| Project type | Fill these templates | Standards that apply | Skip |
-| ------------ | -------------------- | -------------------- | ---- |
-| Full AI application (UI + AI + data + API) | All templates | code, data, ai, workflow | None |
-| Internal web app or dashboard (light or no AI) | `project-overview`<br>`architecture`<br>`build-plan`<br>`progress-tracker`<br>`library-docs`<br>`ui-rules`<br>`ui-registry` | code, workflow (data if data-backed) | `ai-standards` if no model use |
-| Data analysis, visualization, or notebook | `project-overview` (light)<br>`progress-tracker`<br>`library-docs` | code, data, workflow (ai if using models) | `architecture`, `build-plan`, `ui-rules`, `ui-registry` |
-| API or automation script (small) | `AGENTS.md` (light)<br>`progress-tracker` (optional) | code, workflow | `architecture`, `build-plan`, `ui-rules`, `ui-registry`, `data`, `ai` unless relevant |
-| Prompt or GPT asset | `AGENTS.md` (light)<br>`project-overview` (light) | ai, workflow | `architecture`, `build-plan`, `ui-rules`, `ui-registry`, `data` |
+### Full AI application (UI + AI + data + API)
+
+- **Fill these templates:** all templates
+- **Standards that apply:** code, data, ai, workflow
+- **Skip:** none
+
+### Internal web app or dashboard (light or no AI)
+
+- **Fill these templates:**
+  - `project-overview`
+  - `architecture`
+  - `build-plan`
+  - `progress-tracker`
+  - `library-docs`
+  - `ui-rules`
+  - `ui-registry`
+- **Standards that apply:** code, workflow (data if data-backed)
+- **Skip:** `ai-standards` if no model use
+
+### Data analysis, visualization, or notebook
+
+- **Fill these templates:**
+  - `project-overview` (light)
+  - `progress-tracker`
+  - `library-docs`
+- **Standards that apply:** code, data, workflow (ai if using models)
+- **Skip:** `architecture`, `build-plan`, `ui-rules`, `ui-registry`
+
+### API or automation script (small)
+
+- **Fill these templates:**
+  - `AGENTS.md` (light)
+  - `progress-tracker` (optional)
+- **Standards that apply:** code, workflow
+- **Skip:** `architecture`, `build-plan`, `ui-rules`, `ui-registry`, `data`, `ai` unless relevant
+
+### Prompt or GPT asset
+
+- **Fill these templates:**
+  - `AGENTS.md` (light)
+  - `project-overview` (light)
+- **Standards that apply:** ai, workflow
+- **Skip:** `architecture`, `build-plan`, `ui-rules`, `ui-registry`, `data`
 
 Rule of thumb: keep all the standards files, fill only the templates your project actually needs, and mark the rest `not applicable` (or delete them). The Prompt or GPT asset profile leans on the `/promptSave` skill; the AI application and web app profiles use the UI skills like `/imprint`.
 
