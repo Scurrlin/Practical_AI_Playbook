@@ -160,7 +160,3 @@ The base `skills/` folder is the source of truth. The Claude and Codex integrati
 This playbook should not feel like busywork. It should make AI-assisted work clearer, calmer, and less likely to drift.
 
 The docs are the source of truth. The skills are the repeatable workflows. Everything is plain Markdown, so the playbook stays portable and reusable.
-
-## Credits
-
-The minimal-implementation ladder in `AGENTS.md` and `context/code-standards.md` is adapted from [Ponytail](https://github.com/DietrichGebert/ponytail) (MIT).
