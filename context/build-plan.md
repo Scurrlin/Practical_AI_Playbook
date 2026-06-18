@@ -6,12 +6,9 @@ Purpose: phased implementation path and next useful unit of work.
 
 [IMPLEMENTATION_PRINCIPLE]
 
-## Current Strategy
+## Live Status
 
-- **Current phase:** [CURRENT_PHASE]
-- **Current feature or unit:** [CURRENT_FEATURE]
-- **Next verification checkpoint:** [NEXT_VERIFICATION]
-- **Primary risk:** [PRIMARY_RISK]
+Live status (current phase, next step, risks) lives in `context/progress-tracker.md`.
 
 ## Phase Template
 

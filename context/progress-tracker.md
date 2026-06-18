@@ -8,6 +8,7 @@ Purpose: current status, completed work, decisions, risks, and next step.
 - **Last completed:** [LAST_COMPLETED_WORK]
 - **In progress:** [IN_PROGRESS_WORK]
 - **Next:** [NEXT_FEATURE_OR_TASK]
+- **Next verification:** [NEXT_VERIFICATION]
 - **Blocked by:** [BLOCKER_OR_NONE]
 
 ## Progress

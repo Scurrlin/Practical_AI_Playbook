@@ -12,9 +12,9 @@ The project includes:
 
 [CORE_CAPABILITIES]
 
-Current stage: [CURRENT_STAGE]
-
 Primary outcome: [PRIMARY_OUTCOME]
+
+Current stage is tracked in `context/progress-tracker.md`.
 
 ## Project Context
 
@@ -33,6 +33,8 @@ Use the files in `context/` as the project source of truth:
 - `context/progress-tracker.md` - durable current status, completed work, decisions, and next step.
 
 The `*-standards.md` files and `context/ai-workflow-rules.md` are use-as-is standards; the rest of `context/` and `AGENTS.md` are fill-in templates that may not all apply to a given project. See the README "Project Profiles" section for which files each kind of project needs.
+
+Where `AGENTS.md` summarizes a `context/*-standards.md` file, the standards file is authoritative if they disagree.
 
 A separate `memory.md` may exist in the project root. It is the per-session handoff written by `/rememberSave` and holds transient session state, not durable project status. When they overlap, treat `context/progress-tracker.md` as the durable record and `memory.md` as the latest session handoff.
 
@@ -88,7 +90,7 @@ Follow `context/code-standards.md` and the conventions already present in the pr
 - Handle expected failures explicitly.
 - Keep secrets out of source files, docs, logs, AI chats, screenshots, and memory.
 
-Reach for the least code that fully solves the task, stopping at the first rung that holds: (1) does it need to exist, (2) standard library, (3) native platform feature, (4) installed dependency, (5) one line, (6) the minimum that works. This reduces code, not rigor: never cut validation, data-loss handling, security, or accessibility to make something shorter.
+Reach for the least code that fully solves the task using the Minimal Implementation Ladder in `context/code-standards.md`. This reduces code, not rigor: never cut validation, data-loss handling, security, or accessibility to make something shorter.
 
 ## UI Work
 
