@@ -8,25 +8,23 @@ This is a practical, drag-and-drop playbook for building software with AI (that 
 2. Fill in the `[PLACEHOLDER]` tokens in `AGENTS.md` and only the `context/` templates your project needs (see [Project Profiles](#project-profiles)).
 3. Tell your AI assistant: "Read `AGENTS.md` and `context/` before planning or making changes."
 
-That's really all you need to get started. Your AI assistant will now follow the same working rules every session, and you can call the slash skills (`/architect`, `/review`, `/rememberSave`, etc.) whenever you need to.
+That's really all you need to start building. Your AI assistant will now follow the same working rules every session, and you can call the slash skills (`/architect`, `/review`, `/rememberSave`, etc.) whenever you need to.
 
-If you're a seasoned pro, or have prior experience with AI-assisted development, feel free to skip the rest of this guide and start building.
+If you're a seasoned pro, or have prior experience with AI-assisted development, feel free to skip the rest of this guide.
 
-However, if you're new to coding with AI, or just want to know more about how this all works, I encourage you to keep reading.
+That said, if you're new to coding with AI, or just want to know more about how this all works, I encourage you to keep reading.
 
-## What Each Part Is For
+## What Each Part Does
 
 - `AGENTS.md` is the project-facing agent guide. Fill in its placeholders so it reads like it belongs to the project you dropped it into.
 - `context/` is the project memory. It explains what the project is, how it is structured, what rules matter, and what is currently happening.
 - `skills/` is the workflow library. Each slash command points to a matching `skills/<name>/SKILL.md` file.
-- `integrations/` contains optional tool-specific layouts for Claude Code, Codex, and Cursor.
-- `memory.md` is the per-session handoff file written by `/rememberSave` in the project root. It is transient session state, distinct from `context/progress-tracker.md`, which holds durable project status. It appears once you first save memory.
-
-The README is for humans. `AGENTS.md` is the reusable agent guide the AI reads while working.
+- `integrations/` contains optional tool-specific layouts for Claude Code, Codex, and Cursor (if you use them).
+- `memory.md` is a transient handoff file created in the project root by `/rememberSave`. It is separate from the `context/progress-tracker.md` file which tracks durable project status. This file is created the first time you save session memory.
 
 ## How It Fits Together
 
-You drop in three folders. The AI reads `AGENTS.md` and `context/` as its source of truth, then the slash skills wrap each moment of the build lifecycle.
+The `AGENTS.md` and `context/` are the two sources of truth, tethering the actions of your AI assistant to the task at hand and reduce token burn. The slash skills are theoretically unneccessary for successful implementation, but they are extremely helpful for dealing with or even outright preventing hallucinations and drift.
 
 ```mermaid
 flowchart TD
@@ -56,13 +54,13 @@ The files in `context/` come in two distinct flavors. Knowing which is which wil
 
 - **Use-as-is standards** (no editing required): `context/code-standards.md`, `context/data-standards.md`, `context/ai-standards.md`, and `context/ai-workflow-rules.md`. They work immediately. Only edit one if a project rule differs from what it says.
 
-- **Fill-in templates** (project memory, full of `[PLACEHOLDER]` tokens): `AGENTS.md`, `context/project-overview.md`, `context/architecture.md`, `context/build-plan.md`, `context/progress-tracker.md`, `context/library-docs.md`, `context/ui-rules.md`, and `context/ui-registry.md`. Replace the placeholders with your project's real details, or mark a file `not applicable` if your project does not need it.
+- **Fill-in templates** (project memory, full of `[PLACEHOLDER]` tokens): `AGENTS.md`, `context/project-overview.md`, `context/architecture.md`, `context/build-plan.md`, `context/progress-tracker.md`, `context/library-docs.md`, `context/ui-rules.md`, and `context/ui-registry.md`. Replace the placeholders with your project's real details. Try to balance specificty with directness, but it's always better to be too detailed than not detailed enough.
 
-You do not need every template for every project. See [Project Profiles](#project-profiles) for which files each kind of project actually needs.
+It's also worth nothing that you DO NOT need every template for every project. See the [Project Profiles](#project-profiles) section for more information on which files each kind of project actually needs.
 
 ## Skill Commands
 
-Use these in your AI chat when the moment calls for a specific workflow:
+Use these slash skills in your AI chat when the moment calls for a specific workflow:
 
 | Command | Use it when |
 | ------- | ----------- |
@@ -74,13 +72,15 @@ Use these in your AI chat when the moment calls for a specific workflow:
 | `/imprint` | UI work created a reusable pattern that should stay consistent. |
 | `/promptSave` | You want to design, optimize, and document a prompt or GPT as a reusable asset. |
 
-If your AI tool supports slash skills, it can treat these as commands. If it does not, use the same slash text anyway; it tells the AI to read the matching file in `skills/` and follow it.
+If your AI tool supports slash skills, it can treat these as commands. If it does not, use the same slash text anyway; this will directly tell the AI to read the matching file in `skills/` and follow it.
 
 ## How To Use It
 
-1. Drop the playbook files into a project.
+Before moving on to the project templates, let's recap everything we've covered so far:
+
+1. Drop the playbook files into your project.
 2. Fill in the relevant `context/` templates.
-3. Ask the AI to read `AGENTS.md` before planning or changing code.
+3. Ask the AI to read `AGENTS.md` and `context/` before planning or changing code.
 4. Use slash skills for planning, review, memory, recovery, and UI consistency.
 5. Keep `context/` updated when decisions, architecture, standards, or progress change.
 
