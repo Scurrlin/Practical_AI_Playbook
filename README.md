@@ -16,11 +16,11 @@ That said, if you're new to coding with AI, or just want to know more about how 
 
 ## What Each Part Does
 
-- `AGENTS.md` is the project-facing agent guide. Fill in its placeholders so it reads like it belongs to the project you dropped it into.
-- `context/` is the project memory. It explains what the project is, how it is structured, what rules matter, and what is currently happening.
-- `skills/` is the workflow library. Each slash command points to a matching `skills/<name>/SKILL.md` file.
+- `AGENTS.md` is the project-facing agent guide. Fill in its placeholders so it reads like it the primary spec guiding development.
+- `context/` is the project's memory. It explains what the project is, how it is structured, what rules matter, and what is currently happening.
+- `skills/` is the workflow library. Each slash command or skill points to a matching `skills/<name>/SKILL.md` file.
 - `integrations/` contains optional tool-specific layouts for Claude Code, Codex, and Cursor (if you use them).
-- `memory.md` is a transient handoff file created in the project root by `/rememberSave`. It is separate from the `context/progress-tracker.md` file which tracks durable project status. This file is created the first time you save session memory.
+- `memory.md` is a transient handoff file created in the project root by `/rememberSave`. It is separate from the `context/progress-tracker.md` file which tracks overall project status. This file is created the first time you save session memory.
 
 ## How It Fits Together
 
@@ -52,11 +52,11 @@ flowchart TD
 
 The files in `context/` come in two distinct flavors. Knowing which is which will save you time (and tokens):
 
-- **Use-as-is standards** (no editing required): `context/code-standards.md`, `context/data-standards.md`, `context/ai-standards.md`, and `context/ai-workflow-rules.md`. They work immediately. Only edit one if a project rule differs from what it says.
+- **Use-as-is standards** (no editing required): `context/code-standards.md`, `context/data-standards.md`, `context/ai-standards.md`, and `context/ai-workflow-rules.md`. These work broadly and immediately, but can be tailored to fit your project's specific governance needs.
 
 - **Fill-in templates** (project memory, full of `[PLACEHOLDER]` tokens): `AGENTS.md`, `context/project-overview.md`, `context/architecture.md`, `context/build-plan.md`, `context/progress-tracker.md`, `context/library-docs.md`, `context/ui-rules.md`, and `context/ui-registry.md`. Replace the placeholders with your project's real details. Try to balance specificty with directness, but it's always better to be too detailed than not detailed enough.
 
-It's worth noting that you DO NOT need every template for every project. See the [Project Profiles](#project-profiles) section for more information on which files each kind of project actually needs.
+It's worth noting that you DO NOT need every template for every project. See the [Project Profiles](#project-profiles) section for more information on which files each project example actually needs.
 
 ## Skill Commands
 
@@ -86,7 +86,7 @@ Before moving on to the project templates, let's recap everything we've covered 
 
 ## Project Profiles
 
-Remember, not every project will need every file. The use-as-is standards should always be included (they cost nothing to keep), so the only real question you need to ask yourself is which context files you need to fill in. Use the template closest to your project, then adjust it from there.
+Remember, not every project will need every file. The use-as-is standards should always be included, but the context files should only be used if they are relevant to your project. Use the template that best fits your needs, then adjust it from there.
 
 ### Full AI application (UI + AI + data + API)
 
@@ -131,8 +131,6 @@ Remember, not every project will need every file. The use-as-is standards should
   - `project-overview` (light)
 - **Standards that apply:** ai, workflow
 - **Skip:** `architecture`, `build-plan`, `ui-rules`, `ui-registry`, `data`
-
-Generally speaking, you should keep all the standards files, use only the templates your project actually needs, and ignore the rest. The Prompt or GPT asset profile leans on the `/promptSave` skill, while the AI application and web app profiles rely heavily on the UI skills like `/imprint`.
 
 ## Tool Integrations
 
