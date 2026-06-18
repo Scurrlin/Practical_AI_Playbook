@@ -1,6 +1,6 @@
 # Practical AI Playbook
 
-This is a practical, drag-and-drop playbook for building software with AI (that won't burn through your entire token budget). It’s not some fancy framework or 10x toolchain; it’s just a small set of project files that help your AI assistant understand exactly what you’re building.
+This is a practical, drag-and-drop playbook for building software with AI (that won't burn through your entire token budget). It’s not some fancy framework or 10x toolchain; it’s just a small set of project files that will help your AI assistant understand exactly what you’re building.
 
 ## Getting Started
 
@@ -24,7 +24,7 @@ That said, if you're new to coding with AI, or just want to know more about how 
 
 ## How It Fits Together
 
-The `AGENTS.md` and `context/` are the two sources of truth, tethering the actions of your AI assistant to the task at hand and reduce token burn. The slash skills are theoretically unneccessary for successful implementation, but they are extremely helpful for dealing with or even outright preventing hallucinations and drift.
+The `AGENTS.md` and `context/` act as the two sources of truth, tethering the actions of your AI assistant to the task at hand and reducing token burn. The slash skills are theoretically unneccessary for successful implementation, but they are extremely helpful for dealing with or even outright preventing hallucinations and drift.
 
 ```mermaid
 flowchart TD
@@ -56,7 +56,7 @@ The files in `context/` come in two distinct flavors. Knowing which is which wil
 
 - **Fill-in templates** (project memory, full of `[PLACEHOLDER]` tokens): `AGENTS.md`, `context/project-overview.md`, `context/architecture.md`, `context/build-plan.md`, `context/progress-tracker.md`, `context/library-docs.md`, `context/ui-rules.md`, and `context/ui-registry.md`. Replace the placeholders with your project's real details. Try to balance specificty with directness, but it's always better to be too detailed than not detailed enough.
 
-It's also worth nothing that you DO NOT need every template for every project. See the [Project Profiles](#project-profiles) section for more information on which files each kind of project actually needs.
+It's worth noting that you DO NOT need every template for every project. See the [Project Profiles](#project-profiles) section for more information on which files each kind of project actually needs.
 
 ## Skill Commands
 
@@ -72,7 +72,7 @@ Use these slash skills in your AI chat when the moment calls for a specific work
 | `/imprint` | UI work created a reusable pattern that should stay consistent. |
 | `/promptSave` | You want to design, optimize, and document a prompt or GPT as a reusable asset. |
 
-If your AI tool supports slash skills, it can treat these as commands. If it does not, use the same slash text anyway; this will directly tell the AI to read the matching file in `skills/` and follow it.
+If your AI tool supports slash skills, it can treat these as commands. If it does not, use the same slash text anyway; this will directly tell the AI to read the matching file in `skills/` and follow it's instructions.
 
 ## How To Use It
 
@@ -86,7 +86,7 @@ Before moving on to the project templates, let's recap everything we've covered 
 
 ## Project Profiles
 
-Not every project needs every file. The use-as-is standards always come along (they cost nothing to keep), so the only real question is which templates you fill in. Use the profile closest to your project, then adjust.
+As stated earlier, not every project will need every file. The use-as-is standards should always be included (they cost nothing to keep), so the only real question you need to ask yourself is which context files you need to fill in. Use the template closest to your project, then adjust it from there.
 
 ### Full AI application (UI + AI + data + API)
 
