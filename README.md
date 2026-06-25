@@ -106,8 +106,10 @@ Remember, not every project will need every file. The use-as-is standards are ge
 
 ### Full AI application (UI + AI + data + API)
 
-- **Templates:** all templates
-- **Standards:** all standards
+- **Templates:**
+  - all templates
+- **Standards:**
+  - all standards
 
 ### Internal web app or dashboard (light or no AI)
 
@@ -119,7 +121,10 @@ Remember, not every project will need every file. The use-as-is standards are ge
   - `library-docs`
   - `ui-rules`
   - `ui-registry`
-- **Standards:** code, data, workflow
+- **Standards:**
+  - code
+  - data
+  - workflow
 
 ### Data analysis, visualization, or notebook
 
@@ -127,21 +132,28 @@ Remember, not every project will need every file. The use-as-is standards are ge
   - `project-overview` (light)
   - `progress-tracker`
   - `library-docs`
-- **Standards:** code, data, workflow
+- **Standards:**
+  - code
+  - data
+  - workflow
 
 ### API or automation script (small)
 
 - **Templates:**
   - `AGENTS.md` (light)
   - `progress-tracker` (optional)
-- **Standards:** code, workflow
+- **Standards:**
+  - code
+  - workflow
 
 ### Prompt or GPT asset
 
 - **Templates:**
   - `AGENTS.md` (light)
   - `project-overview` (light)
-- **Standards:** workflow, ai
+- **Standards:**
+  - workflow
+  - ai
 
 ## Tool Integrations
 
